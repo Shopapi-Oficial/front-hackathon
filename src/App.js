@@ -1,8 +1,9 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import Theme from "styles/theme";
-import GlobalStyles from "styles/globalStyles";
+import React from 'react';
+
+import './App.css';
+import Theme from 'styles/theme';
+import GlobalStyles from 'styles/globalStyles';
+import logo from './logo.svg';
 
 function App() {
   return (
