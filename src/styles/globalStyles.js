@@ -11,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased;
+    background: white
   }
 
   button {
