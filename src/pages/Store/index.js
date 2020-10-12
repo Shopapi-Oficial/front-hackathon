@@ -4,9 +4,12 @@ import Grid from '@material-ui/core/Grid';
 import { IconSearch } from 'tabler-icons';
 import { Link } from 'react-router-dom';
 
+import logo from 'assets/whiteLogo.svg';
 import {
   Content,
   Header,
+  SalleButtom,
+  SalleButtomText,
   StoreLogo,
   ShopapiLogo,
   SearchContainer,
@@ -16,7 +19,6 @@ import {
 } from './styles';
 
 import ProductCard from './components/ProductCard';
-import logo from '../../assets/img/shopapi-logo.png';
 
 function Store() {
   return (
@@ -29,7 +31,11 @@ function Store() {
           />
           <p>Playtech Instrumentos Musicais</p>
         </div>
-        <ShopapiLogo src={logo} alt="shopapi-logo" />
+
+        <SalleButtom to="/sell">
+          <SalleButtomText>Vender</SalleButtomText>
+          <ShopapiLogo src={logo} alt="shopapi-logo" />
+        </SalleButtom>
       </Header>
 
       <SearchContainer>

@@ -8,6 +8,8 @@ import Register from 'pages/Register';
 import Store from 'pages/Store';
 import Product from 'pages/Product';
 import Cart from 'pages/Cart';
+import Sell from 'pages/Sell';
+import SellCode from 'pages/SellCode';
 
 const Routes = () => (
   <Switch>
@@ -15,6 +17,8 @@ const Routes = () => (
     <ProtectedRoute path="/store" component={Store} />
     <ProtectedRoute path="/product" component={Product} />
     <ProtectedRoute path="/cart" component={Cart} />
+    <ProtectedRoute path="/sell" component={Sell} />
+    <ProtectedRoute path="/code" component={SellCode} />
     <Route path="/register" component={Register} />
     <Route path="/login" component={Login} />
   </Switch>

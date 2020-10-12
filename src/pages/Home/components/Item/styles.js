@@ -19,8 +19,8 @@ export const StoreLogo = styled.img`
 export const TextContainer = styled.div``;
 
 export const StoreName = styled.p`
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 1em;
+  font-weight: 500;
   margin-bottom: 6px;
   color: ${({ theme }) => theme.colors.gray2};
 `;

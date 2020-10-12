@@ -20,7 +20,7 @@ export const Category = styled.button`
 `;
 
 export const CategoryTitle = styled.p`
-  font-size: 14px;
+  font-size: 1.1em;
   font-weight: 500;
   margin-left: 5px;
   color: ${({ theme }) => theme.colors.gray3};

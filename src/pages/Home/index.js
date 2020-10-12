@@ -21,9 +21,10 @@ import {
   StoreText,
   LoaderContent,
   Loader,
+  HeaderView,
 } from './styles';
 
-const Home = memo(() => {
+const Home = memo(({ history }) => {
   const [search, setSearch] = useState('');
   const [userName, setUserName] = useState('');
 
@@ -40,16 +41,26 @@ const Home = memo(() => {
   const stores = data?.merchants ?? [];
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged(user => setUserName(user.displayName));
+    firebase
+      .auth()
+      .onAuthStateChanged(user => setUserName(user?.displayName ?? ''));
   }, []);
+
+  const signOut = () =>
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        localStorage.removeItem('token');
+        history.push('/login');
+      });
 
   const renderHeaderText = () =>
     userName ? (
-      <HeaderText>
-        Bem vindo,
-        <br />
-        {userName}
-      </HeaderText>
+      <HeaderView onClick={signOut}>
+        <HeaderText>Bem vindo,</HeaderText>
+        <HeaderText>{userName}</HeaderText>
+      </HeaderView>
     ) : null;
 
   const renderStores = useCallback(

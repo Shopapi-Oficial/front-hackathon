@@ -21,10 +21,16 @@ export const Logo = styled.img`
   height: 31px;
 `;
 
+export const HeaderView = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+
 export const HeaderText = styled.p`
   color: white;
   font-weight: 600;
-  font-size: 1.18em;
+  font-size: 1.1em;
 `;
 
 export const ItemsRow = styled.div`
@@ -56,8 +62,7 @@ export const SearchInput = styled.input`
   height: 100%;
   width: 95%;
   padding: 12px 0;
-  font-size: 1.2em;
-  outline: none;
+  font-size: 1em;
   color: ${({ theme }) => theme.colors.gray6};
   ::-ms-input-placeholder {
     color: ${({ theme }) => theme.colors.gray6};
@@ -74,7 +79,7 @@ export const SearchIcon = styled(IconSearch).attrs({
 
 export const StoreText = styled.p`
   font-weight: bold;
-  font-size: 24px;
+  font-size: 1.4em;
   color: ${({ theme }) => theme.colors.gray1};
 `;
 
