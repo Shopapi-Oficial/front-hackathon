@@ -2,6 +2,7 @@ import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import { IconSearch } from 'tabler-icons';
+import { Link } from 'react-router-dom';
 
 import {
   Content,
@@ -52,7 +53,9 @@ function Store() {
         <Grid container spacing={2}>
           {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(value => (
             <Grid key={value} xs={6} item>
-              <ProductCard />
+              <Link to="/product">
+                <ProductCard />
+              </Link>
             </Grid>
           ))}
         </Grid>
