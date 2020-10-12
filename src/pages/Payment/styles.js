@@ -40,6 +40,7 @@ export const PaymentHeader = styled.div`
   align-items: center;
   padding: 12px 24px;
   background-color: ${({ theme }) => theme.colors.gray10};
+  cursor: pointer;
 
   > div {
     width: 36px;
