@@ -10,6 +10,7 @@ import Product from 'pages/Product';
 import Cart from 'pages/Cart';
 import Sell from 'pages/Sell';
 import SellCode from 'pages/SellCode';
+import Payment from 'pages/Payment';
 
 const Routes = () => (
   <Switch>
@@ -19,6 +20,7 @@ const Routes = () => (
     <ProtectedRoute path="/cart" component={Cart} />
     <ProtectedRoute path="/sell" component={Sell} />
     <ProtectedRoute path="/code" component={SellCode} />
+    <ProtectedRoute path="/payment" component={Payment} />
     <Route path="/register" component={Register} />
     <Route path="/login" component={Login} />
   </Switch>
