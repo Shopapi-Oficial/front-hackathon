@@ -1,6 +1,5 @@
 import React, { memo, useState } from 'react';
 import firebase from 'firebase';
-import { IconArrowLeft } from 'tabler-icons';
 
 import logo from 'assets/logo.svg';
 
@@ -12,7 +11,6 @@ import {
   Input,
   Button,
   Loader,
-  BackButtom,
 } from './styles';
 
 const Register = memo(({ history }) => {
@@ -44,10 +42,6 @@ const Register = memo(({ history }) => {
   return (
     <Content>
       <ContentView>
-        <BackButtom to="/login">
-          <IconArrowLeft size={30} />
-        </BackButtom>
-
         <Logo src={logo} />
 
         <Form onSubmit={register}>

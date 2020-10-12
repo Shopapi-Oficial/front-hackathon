@@ -1,4 +1,5 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
+import firebase from 'firebase';
 
 import logo from 'assets/lightLogo.svg';
 import Categories from './components/Categories';
@@ -19,6 +20,20 @@ import {
 
 const Home = memo(() => {
   const [search, setSearch] = useState('');
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(user => setUserName(user.displayName));
+  }, []);
+
+  const renderHeaderText = () =>
+    userName ? (
+      <HeaderText>
+        Bem vindo,
+        <br />
+        {userName}
+      </HeaderText>
+    ) : null;
 
   return (
     <>
@@ -27,11 +42,7 @@ const Home = memo(() => {
           <ItemsRow>
             <Logo src={logo} />
 
-            <HeaderText>
-              Bem vindo,
-              <br />
-              Lucas
-            </HeaderText>
+            {renderHeaderText()}
           </ItemsRow>
         </HeaderContent>
       </Header>

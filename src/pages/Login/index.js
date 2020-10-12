@@ -19,9 +19,9 @@ const Login = memo(({ history }) => {
   const [loading, setLoding] = useState(false);
   const isLogged = localStorage.getItem('token');
 
-  // useEffect(() => {
-  //   if (isLogged) history.push('/');
-  // }, [history, isLogged]);
+  useEffect(() => {
+    if (isLogged) history.push('/');
+  }, [history, isLogged]);
 
   const handleChange = ({ target }) =>
     setData(d => ({ ...d, [target.name]: target.value }));
@@ -37,9 +37,9 @@ const Login = memo(({ history }) => {
         localStorage.setItem('token', user.uid);
         history.push('/');
       })
-      .catch(() => {
+      .catch(error => {
         setLoding(false);
-        alert('Erro ao fazer login');
+        alert(`Erro ao fazer login${error}`);
       });
   };
 
@@ -68,12 +68,7 @@ const Login = memo(({ history }) => {
 
           <Button>{loading ? <Loader /> : 'Entrar'}</Button>
 
-          <RegisterButton
-            type="button"
-            onClick={() => history.push('/register')}
-          >
-            Registre-se
-          </RegisterButton>
+          <RegisterButton to="/register">Registre-se</RegisterButton>
         </Form>
       </ContentView>
     </Content>

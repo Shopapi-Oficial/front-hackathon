@@ -5,7 +5,6 @@ import {
   IconTicket,
   IconCar,
   IconBallBasketball,
-  IconPlane,
 } from 'tabler-icons';
 
 import { CategoriesConteiner, Category, CategoryTitle } from './styles';
@@ -23,6 +22,11 @@ const Categories = memo(() => (
     </Category>
 
     <Category>
+      <IconBallBasketball color="#3D9426" />
+      <CategoryTitle>Esporte</CategoryTitle>
+    </Category>
+
+    <Category>
       <IconTicket color="#3D9426" />
       <CategoryTitle>Entretenimento </CategoryTitle>
     </Category>
@@ -30,16 +34,6 @@ const Categories = memo(() => (
     <Category>
       <IconCar color="#3D9426" />
       <CategoryTitle>Transporte</CategoryTitle>
-    </Category>
-
-    <Category>
-      <IconBallBasketball color="#3D9426" />
-      <CategoryTitle>Esporte</CategoryTitle>
-    </Category>
-
-    <Category>
-      <IconPlane color="#3D9426" />
-      <CategoryTitle>Viagem</CategoryTitle>
     </Category>
   </CategoriesConteiner>
 ));

@@ -1,16 +1,14 @@
 import styled from 'styled-components';
+import { Container } from '@material-ui/core';
 
-export const Container = styled.div`
-  height: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  padding: 24px 20px 0 20px;
-`;
+export const Content = styled(Container).attrs({
+  maxWidth: 'md',
+  component: 'main',
+})``;
 
 export const Header = styled.div`
   height: 40px;
+  margin-top: 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,5 +84,5 @@ export const CategoryButton = styled.button`
   line-height: 17px;
   font-weight: 500;
   border-radius: 12px;
-  margin-right: 12px;
+  margin: 6px;
 `;

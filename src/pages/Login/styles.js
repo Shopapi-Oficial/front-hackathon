@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Container, CircularProgress } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 export const Content = styled(Container).attrs({
   component: 'main',
@@ -38,6 +39,7 @@ export const Input = styled.input`
   border-radius: 10px;
   padding: 0 10px;
   box-sizing: border-box;
+  outline: none;
 `;
 
 export const Button = styled.button`
@@ -52,11 +54,14 @@ export const Button = styled.button`
   background: ${({ theme }) => theme.colors.gray1};
   border-radius: 10px;
   border: 0;
+  outline: none;
 `;
 
-export const RegisterButton = styled.button`
+export const RegisterButton = styled(Link)`
   width: 100%;
-  height: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   font-size: 1.3em;
   margin-top: 15px;
   color: ${({ theme }) => theme.colors.gray1};

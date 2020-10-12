@@ -9,7 +9,7 @@ import {
 } from './styles';
 
 const Item = memo(() => (
-  <Container>
+  <Container to="/store">
     <StoreLogo src="https://lojanasantaifigenia.com.br/sites/default/files/styles/logotipo_empresas/public/playtech-logo.fw_.png?itok=tiW6fFmF" />
 
     <TextContainer>

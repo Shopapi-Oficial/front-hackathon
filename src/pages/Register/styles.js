@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Container, CircularProgress } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 
 export const Content = styled(Container).attrs({
   component: 'main',
@@ -18,16 +17,8 @@ export const ContentView = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-export const BackButtom = styled(Link)`
-  color: ${({ theme }) => theme.colors.gray1};
-  position: absolute;
-  left: 10px;
-  top: 10px;
-`;
-
 export const Logo = styled.img`
   width: 185px;
-  margin-top: 60px;
   margin-bottom: 40px;
 `;
 
@@ -47,6 +38,7 @@ export const Input = styled.input`
   border-radius: 10px;
   padding: 0 10px;
   box-sizing: border-box;
+  outline: none;
 `;
 
 export const Button = styled.button`

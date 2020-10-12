@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import { IconSearch } from 'tabler-icons';
 
 import {
-  Container,
+  Content,
   Header,
   StoreLogo,
   ShopapiLogo,
@@ -19,7 +19,7 @@ import logo from '../../assets/img/shopapi-logo.png';
 
 function Store() {
   return (
-    <Container>
+    <Content>
       <Header>
         <div>
           <StoreLogo
@@ -30,12 +30,14 @@ function Store() {
         </div>
         <ShopapiLogo src={logo} alt="shopapi-logo" />
       </Header>
+
       <SearchContainer>
         <p>O que você quer comprar hoje?</p>
         <SearchButton>
           <IconSearch size={24} color="#3D9426" />
         </SearchButton>
       </SearchContainer>
+
       <Categories>
         <CategoryButton>Guitarras</CategoryButton>
         <CategoryButton>Baixos</CategoryButton>
@@ -45,16 +47,17 @@ function Store() {
         <CategoryButton>Áudio</CategoryButton>
         <CategoryButton>Teclas</CategoryButton>
       </Categories>
-      <Grid item xs={4}>
-        <Grid container justify="start" spacing={2}>
+
+      <Grid item xs={12}>
+        <Grid container spacing={2}>
           {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(value => (
-            <Grid key={value} item>
+            <Grid key={value} xs={6} item>
               <ProductCard />
             </Grid>
           ))}
         </Grid>
       </Grid>
-    </Container>
+    </Content>
   );
 }
 

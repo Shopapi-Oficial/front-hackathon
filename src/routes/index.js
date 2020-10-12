@@ -10,9 +10,9 @@ import Store from 'pages/Store';
 const Routes = () => (
   <Switch>
     <ProtectedRoute exact path="/" component={Home} />
+    <ProtectedRoute path="/store" component={Store} />
     <Route path="/register" component={Register} />
     <Route path="/login" component={Login} />
-    <Route path="/store" component={Store} />
   </Switch>
 );
 

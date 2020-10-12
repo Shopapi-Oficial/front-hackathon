@@ -8,7 +8,7 @@ export const Header = styled.div`
   flex-direction: column;
   padding-top: 15px;
   width: 100%;
-  height: 120px;
+  height: 108px;
   background: ${({ theme }) => theme.colors.primary};
 `;
 
@@ -24,11 +24,12 @@ export const Logo = styled.img`
 export const HeaderText = styled.p`
   color: white;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 1.18em;
 `;
 
 export const ItemsRow = styled.div`
   display: flex;
+  height: 50px;
   justify-content: space-between;
   align-items: center;
 `;
@@ -39,12 +40,13 @@ export const Content = styled(Container).attrs({
 })``;
 
 export const Search = styled.div`
-  height: 66px;
+  height: 50px;
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 0 10px;
-  margin-top: -40px;
+  justify-content: space-between;
+  padding: 15px;
+  margin-top: -25px;
   background: white;
   border-radius: 12px;
   border: solid 1px ${({ theme }) => theme.colors.gray9};
@@ -52,8 +54,9 @@ export const Search = styled.div`
 
 export const SearchInput = styled.input`
   height: 100%;
-  width: 90%;
-  font-size: 24px;
+  width: 95%;
+  padding: 12px 0;
+  font-size: 1.2em;
   outline: none;
   color: ${({ theme }) => theme.colors.gray6};
   ::-ms-input-placeholder {
