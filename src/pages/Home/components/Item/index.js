@@ -8,14 +8,14 @@ import {
   StoreName,
 } from './styles';
 
-const Item = memo(() => (
+const Item = memo(({ data }) => (
   <Container to="/store">
     <StoreLogo src="https://lojanasantaifigenia.com.br/sites/default/files/styles/logotipo_empresas/public/playtech-logo.fw_.png?itok=tiW6fFmF" />
 
     <TextContainer>
-      <StoreName>Playtech Instrumentos Musicais</StoreName>
+      <StoreName>{data.name}</StoreName>
 
-      <StoreCategory>Música</StoreCategory>
+      <StoreCategory>{data.category.name}</StoreCategory>
     </TextContainer>
   </Container>
 ));
