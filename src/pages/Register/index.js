@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import firebase from 'firebase';
 
 import logo from 'assets/logo.svg';
@@ -16,6 +16,11 @@ import {
 const Register = memo(({ history }) => {
   const [data, setData] = useState({});
   const [loading, setLoding] = useState(false);
+  const isLogged = localStorage.getItem('token');
+
+  useEffect(() => {
+    if (isLogged) history.push('/');
+  }, [history, isLogged]);
 
   const handleChange = ({ target }) =>
     setData(d => ({ ...d, [target.name]: target.value }));
@@ -27,10 +32,13 @@ const Register = memo(({ history }) => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(data.email, data.password)
-      .then(res => {
-        res.user
-          .updateProfile({ displayName: data.name })
-          .then(() => history.push('/'));
+      .then(async ({ user }) => {
+        const token = await user.getIdToken(true);
+
+        user.updateProfile({ displayName: data.name }).then(() => {
+          localStorage.setItem('token', token);
+          history.push('/');
+        });
       })
       .catch(error => {
         setLoding(false);

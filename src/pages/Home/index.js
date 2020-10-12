@@ -1,5 +1,8 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useEffect, useState, useCallback } from 'react';
 import firebase from 'firebase';
+import { useQuery } from '@apollo/client';
+
+import { GET_STORES } from 'graphql/queries';
 
 import logo from 'assets/lightLogo.svg';
 import Categories from './components/Categories';
@@ -16,11 +19,25 @@ import {
   SearchInput,
   SearchIcon,
   StoreText,
+  LoaderContent,
+  Loader,
 } from './styles';
 
 const Home = memo(() => {
   const [search, setSearch] = useState('');
   const [userName, setUserName] = useState('');
+
+  const { data, loading } = useQuery(GET_STORES, {
+    options: {
+      context: {
+        headers: {
+          'X-Hasura-Role': 'salesman',
+        },
+      },
+    },
+  });
+
+  const stores = data?.merchants ?? [];
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(user => setUserName(user.displayName));
@@ -34,6 +51,23 @@ const Home = memo(() => {
         {userName}
       </HeaderText>
     ) : null;
+
+  const renderStores = useCallback(
+    () => stores.map(item => <Item key={item.id} data={item} />),
+    [stores],
+  );
+
+  const renderContent = useCallback(
+    () =>
+      loading ? (
+        <LoaderContent>
+          <Loader />
+        </LoaderContent>
+      ) : (
+        renderStores()
+      ),
+    [loading],
+  );
 
   return (
     <>
@@ -63,9 +97,7 @@ const Home = memo(() => {
 
         <StoreText>Lojas</StoreText>
 
-        <Item />
-        <Item />
-        <Item />
+        {renderContent()}
       </Content>
     </>
   );

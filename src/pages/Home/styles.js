@@ -77,3 +77,12 @@ export const StoreText = styled.p`
   font-size: 24px;
   color: ${({ theme }) => theme.colors.gray1};
 `;
+
+export const LoaderContent = styled.div`
+  width: 100%;
+  margin-top: 50%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Loader = styled(CircularProgress).attrs({})``;

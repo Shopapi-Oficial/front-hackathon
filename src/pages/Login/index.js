@@ -34,12 +34,14 @@ const Login = memo(({ history }) => {
       .auth()
       .signInWithEmailAndPassword(data.email, data.password)
       .then(({ user }) => {
-        localStorage.setItem('token', user.uid);
-        history.push('/');
+        user.getIdToken(true).then(t => {
+          localStorage.setItem('token', t);
+          history.push('/');
+        });
       })
-      .catch(error => {
+      .catch(() => {
         setLoding(false);
-        alert(`Erro ao fazer login${error}`);
+        alert(`Usuário não cadastrado`);
       });
   };
 
