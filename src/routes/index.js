@@ -7,12 +7,14 @@ import Login from 'pages/Login';
 import Register from 'pages/Register';
 import Store from 'pages/Store';
 import Product from 'pages/Product';
+import Cart from 'pages/Cart';
 
 const Routes = () => (
   <Switch>
     <ProtectedRoute exact path="/" component={Home} />
     <ProtectedRoute path="/store" component={Store} />
     <ProtectedRoute path="/product" component={Product} />
+    <ProtectedRoute path="/cart" component={Cart} />
     <Route path="/register" component={Register} />
     <Route path="/login" component={Login} />
   </Switch>
