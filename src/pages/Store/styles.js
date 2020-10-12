@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import { Search } from 'tabler-icons';
-
 export const Container = styled.div`
   height: 100%;
   max-width: 1280px;
@@ -62,7 +60,7 @@ export const SearchContainer = styled.div`
   }
 `;
 
-export const SearchButton = styled.button`
+export const SearchButton = styled.div`
   height: 40px;
   width: 40px;
   border-radius: 10px;
@@ -73,13 +71,6 @@ export const SearchButton = styled.button`
   align-items: center;
   justify-content: center;
 `;
-
-/* export const SearchIcon = styled(Search)`
-  width: 24px;
-  height: 24px;
-
-  fill: ${props => props.theme.colors.primary};
-`; */
 
 export const Categories = styled.div`
   display: flex;

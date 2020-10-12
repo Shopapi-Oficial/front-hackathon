@@ -1,6 +1,8 @@
 import React from 'react';
 
-import GridList from '@material-ui/core/GridList';
+import Grid from '@material-ui/core/Grid';
+import { IconSearch } from 'tabler-icons';
+
 import {
   Container,
   Header,
@@ -8,7 +10,6 @@ import {
   ShopapiLogo,
   SearchContainer,
   SearchButton,
-  /* SearchIcon, */
   Categories,
   CategoryButton,
 } from './styles';
@@ -31,7 +32,9 @@ function Store() {
       </Header>
       <SearchContainer>
         <p>O que você quer comprar hoje?</p>
-        <SearchButton>{/* <SearchIcon /> */}</SearchButton>
+        <SearchButton>
+          <IconSearch size={24} color="#3D9426" />
+        </SearchButton>
       </SearchContainer>
       <Categories>
         <CategoryButton>Guitarras</CategoryButton>
@@ -42,12 +45,15 @@ function Store() {
         <CategoryButton>Áudio</CategoryButton>
         <CategoryButton>Teclas</CategoryButton>
       </Categories>
-      <GridList>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-      </GridList>
+      <Grid item xs={4}>
+        <Grid container justify="start" spacing={2}>
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(value => (
+            <Grid key={value} item>
+              <ProductCard />
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
     </Container>
   );
 }
