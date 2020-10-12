@@ -55,7 +55,7 @@ const Login = memo(({ history }) => {
             name="email"
             type="email"
             required
-            placeholder="Email"
+            placeholder="E-mail"
             value={data.email || ''}
             onChange={handleChange}
           />
@@ -70,7 +70,7 @@ const Login = memo(({ history }) => {
 
           <Button>{loading ? <Loader /> : 'Entrar'}</Button>
 
-          <RegisterButton to="/register">Registre-se</RegisterButton>
+          <RegisterButton to="/register">Ou crie uma conta</RegisterButton>
         </Form>
       </ContentView>
     </Content>

@@ -21,7 +21,7 @@ import {
   FinishButton,
 } from './styles';
 
-function Cart() {
+function Cart({ history }) {
   return (
     <Content>
       <Title>Sacola de compras</Title>
@@ -77,8 +77,12 @@ function Cart() {
           <h1>R$ 5.815,50</h1>
         </ResumeRow>
       </Resume>
-      <BackToStore>Adicionar mais itens</BackToStore>
-      <FinishButton>Continuar para pagamento</FinishButton>
+      <BackToStore onClick={() => history.push('/store')}>
+        Adicionar mais itens
+      </BackToStore>
+      <FinishButton onClick={() => history.push('/payment')}>
+        Continuar para pagamento
+      </FinishButton>
     </Content>
   );
 }

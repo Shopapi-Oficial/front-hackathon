@@ -21,7 +21,7 @@ import {
 import pixIcon from '../../assets/img/pix.png';
 import visaIcon from '../../assets/img/visa.png';
 
-function Payment() {
+function Payment({ history }) {
   const [activePayment, setActivePayment] = useState(0);
 
   return (
@@ -104,7 +104,12 @@ function Payment() {
           <h1>R$ 5.815,50</h1>
         </ResumeRow>
       </Resume>
-      <FinishButton disabled={activePayment === 0}>Fazer pedido</FinishButton>
+      <FinishButton
+        disabled={activePayment === 0}
+        onClick={() => history.push('/store')}
+      >
+        Fazer pedido
+      </FinishButton>
     </Content>
   );
 }

@@ -25,7 +25,7 @@ import {
   AddButton,
 } from './styles';
 
-function Product() {
+function Product({ history }) {
   return (
     <Content>
       <Carousel>
@@ -84,7 +84,9 @@ function Product() {
           <IconBarcode size={24} color="#212829" />
         </PaymentOptionImages>
       </PaymentsContainer>
-      <AddButton>Adicionar à sacola</AddButton>
+      <AddButton onClick={() => history.push('/cart')}>
+        Adicionar à sacola
+      </AddButton>
     </Content>
   );
 }

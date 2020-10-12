@@ -11,6 +11,7 @@ import {
   Input,
   Button,
   Loader,
+  LoginButton,
 } from './styles';
 
 const Register = memo(({ history }) => {
@@ -65,7 +66,7 @@ const Register = memo(({ history }) => {
             name="email"
             type="email"
             required
-            placeholder="Email"
+            placeholder="E-mail"
             value={data.email || ''}
             onChange={handleChange}
           />
@@ -78,7 +79,9 @@ const Register = memo(({ history }) => {
             onChange={handleChange}
           />
 
-          <Button>{loading ? <Loader /> : 'Cadastrar'}</Button>
+          <Button>{loading ? <Loader /> : 'Criar conta'}</Button>
+
+          <LoginButton to="/">Ou entre na sua conta</LoginButton>
         </Form>
       </ContentView>
     </Content>
