@@ -37,12 +37,12 @@ export const SaleImg = styled.img`
 export const Buttom = styled.button`
   width: 90%;
   max-width: 900px;
+  height: 48px;
   background: ${({ theme }) => theme.colors.primary};
   color: white;
-  height: 40px;
   font-weight: 600;
   font-size: 16px;
-  border-radius: 16px;
+  border-radius: 12px;
   position: absolute;
   bottom: 6vh;
   transform: translateX(-50%);

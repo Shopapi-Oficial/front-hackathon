@@ -57,10 +57,10 @@ export const Buttom = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
   font-weight: 600;
   font-size: 16px;
-  border-radius: 16px;
+  border-radius: 12px;
+  height: 48px;
   position: absolute;
   bottom: 6vh;
   transform: translateX(-50%);
