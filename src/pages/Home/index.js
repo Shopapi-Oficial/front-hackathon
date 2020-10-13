@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState, useCallback } from 'react';
 import firebase from 'firebase';
-import { useQuery, useLazyQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 import { GET_STORES } from 'graphql/queries';
 
