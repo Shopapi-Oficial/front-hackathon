@@ -73,7 +73,7 @@ const Home = memo(({ history }) => {
       ) : (
         renderStores()
       ),
-    [loading],
+    [loading, renderStores],
   );
 
   return (
