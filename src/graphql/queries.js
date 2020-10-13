@@ -5,7 +5,7 @@ export const GET_STORES = gql`
     merchants {
       id
       name
-      category {
+      merchant_category {
         id
         name
       }

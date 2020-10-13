@@ -7,7 +7,6 @@ import { GET_STORES } from 'graphql/queries';
 import logo from 'assets/lightLogo.svg';
 import Categories from './components/Categories';
 import Item from './components/Item';
-import { useDebouncedEffect } from 'helpers/debounce';
 
 import {
   Content,
@@ -28,13 +27,10 @@ import {
 const Home = memo(({ history }) => {
   const [search, setSearch] = useState('');
   const [userName, setUserName] = useState('');
-  // const [getDog, { loading, data }] = useLazyQuery(GET_STORES, {O});
 
   const { data, loading } = useQuery(GET_STORES);
 
   const stores = data?.merchants ?? [];
-
-  useDebouncedEffect(() => console.log(search), 500, [search]);
 
   useEffect(() => {
     firebase

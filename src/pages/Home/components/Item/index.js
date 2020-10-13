@@ -15,7 +15,7 @@ const Item = memo(({ data }) => (
     <TextContainer>
       <StoreName>{data.name}</StoreName>
 
-      <StoreCategory>{data.category.name}</StoreCategory>
+      <StoreCategory>{data.merchant_category.name}</StoreCategory>
     </TextContainer>
   </Container>
 ));
