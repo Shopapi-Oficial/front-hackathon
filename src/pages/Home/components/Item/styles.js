@@ -12,8 +12,10 @@ export const Container = styled(Link)`
 
 export const StoreLogo = styled.img`
   height: 56px;
+  width: 72px;
   border-radius: 12px;
   margin-right: 10px;
+  object-fit: cover;
 `;
 
 export const TextContainer = styled.div``;

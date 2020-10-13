@@ -5,6 +5,7 @@ export const GET_STORES = gql`
     merchants {
       id
       name
+      img
       merchant_category {
         id
         name

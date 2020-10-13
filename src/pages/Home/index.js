@@ -1,8 +1,5 @@
 import React, { memo, useEffect, useState, useCallback } from 'react';
 import firebase from 'firebase';
-import { useQuery } from '@apollo/client';
-
-import { GET_STORES } from 'graphql/queries';
 
 import logo from 'assets/lightLogo.svg';
 import Categories from './components/Categories';
@@ -23,19 +20,23 @@ import {
   Loader,
   HeaderView,
 } from './styles';
+import { stores } from './helpers/data';
 
 const Home = memo(({ history }) => {
   const [search, setSearch] = useState('');
   const [userName, setUserName] = useState('');
-
-  const { data, loading } = useQuery(GET_STORES);
-
-  const stores = data?.merchants ?? [];
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     firebase
       .auth()
       .onAuthStateChanged(user => setUserName(user?.displayName ?? ''));
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, []);
 
   const signOut = () =>
