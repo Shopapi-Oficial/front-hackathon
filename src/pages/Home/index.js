@@ -58,7 +58,7 @@ const Home = memo(({ history }) => {
 
   const renderStores = useCallback(
     () => stores.map(item => <Item key={item.id} data={item} />),
-    [stores],
+    [],
   );
 
   const renderContent = useCallback(
