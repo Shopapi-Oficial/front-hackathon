@@ -9,7 +9,7 @@ export const CategoriesConteiner = styled.div`
 
 export const Category = styled.button`
   height: 35px;
-  margin: 5px;
+  margin: 1vw;
   display: flex;
   align-items: center;
   justify-content: center;

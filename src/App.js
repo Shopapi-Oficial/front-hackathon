@@ -2,6 +2,7 @@ import React from 'react';
 import { ApolloProvider } from '@apollo/client';
 import { BrowserRouter } from 'react-router-dom';
 import firebase from 'firebase';
+import { ToastProvider } from 'react-toast-notifications';
 
 import Routes from 'routes';
 
@@ -15,12 +16,14 @@ firebase.initializeApp(firebaseConfig);
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Theme>
-        <GlobalStyles />
-        <BrowserRouter>
-          <Routes />
-        </BrowserRouter>
-      </Theme>
+      <ToastProvider placement="top-center">
+        <Theme>
+          <GlobalStyles />
+          <BrowserRouter>
+            <Routes />
+          </BrowserRouter>
+        </Theme>
+      </ToastProvider>
     </ApolloProvider>
   );
 }

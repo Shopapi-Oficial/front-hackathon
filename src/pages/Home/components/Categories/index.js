@@ -17,8 +17,8 @@ const Categories = memo(() => (
     </Category>
 
     <Category>
-      <IconDevices color="#3D9426" />
-      <CategoryTitle>Tecnologia</CategoryTitle>
+      <IconCar color="#3D9426" />
+      <CategoryTitle>Transporte</CategoryTitle>
     </Category>
 
     <Category>
@@ -32,8 +32,8 @@ const Categories = memo(() => (
     </Category>
 
     <Category>
-      <IconCar color="#3D9426" />
-      <CategoryTitle>Transporte</CategoryTitle>
+      <IconDevices color="#3D9426" />
+      <CategoryTitle>Tecnologia</CategoryTitle>
     </Category>
   </CategoriesConteiner>
 ));

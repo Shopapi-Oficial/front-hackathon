@@ -1,5 +1,6 @@
 import React, { memo, useState, useEffect } from 'react';
 import firebase from 'firebase';
+import { useToasts } from 'react-toast-notifications';
 
 import logo from 'assets/logo.svg';
 
@@ -14,10 +15,12 @@ import {
   Loader,
 } from './styles';
 
-const Login = memo(({ history }) => {
+const Login = memo(({ history, content }) => {
   const [data, setData] = useState({});
   const [loading, setLoding] = useState(false);
   const isLogged = localStorage.getItem('token');
+
+  const { addToast } = useToasts();
 
   useEffect(() => {
     if (isLogged) history.push('/');
@@ -39,9 +42,31 @@ const Login = memo(({ history }) => {
           history.push('/');
         });
       })
-      .catch(() => {
+      .catch(({ code }) => {
+        let msg = 'Error ao logar';
+
+        switch (code) {
+          case 'auth/invalid-email':
+            msg = 'Email inválido.';
+            break;
+          case 'auth/user-not-found':
+            msg = 'Endereço de email não cadastrado.';
+            break;
+          case 'auth/wrong-password':
+            msg = 'Senha incorreta.';
+            break;
+          case 'auth/network-request-failed':
+            msg = 'Erro de conexão com o servidor.';
+            break;
+          default:
+            break;
+        }
+
+        addToast(msg, {
+          appearance: 'error',
+          autoDismiss: true,
+        });
         setLoding(false);
-        alert(`Usuário não cadastrado`);
       });
   };
 
