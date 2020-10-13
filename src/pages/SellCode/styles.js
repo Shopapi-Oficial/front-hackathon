@@ -5,15 +5,11 @@ import { IconCopy } from 'tabler-icons';
 export const Content = styled(Container).attrs({
   maxWidth: 'md',
   component: 'main',
-})`
-  height: auto;
-  max-height: 150%;
-  overflow: auto;
-`;
+})``;
 
 export const Title = styled.p`
   font-size: 1.5em;
-  margin-top: 10vh;
+  margin-top: 6vh;
   margin-bottom: 3vh;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.gray1};
@@ -35,18 +31,18 @@ export const SaleImg = styled.img`
 `;
 
 export const Buttom = styled.button`
-  width: 90%;
+  margin-top: 20px;
+  width: 100%;
   max-width: 900px;
-  height: 48px;
   background: ${({ theme }) => theme.colors.primary};
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 600;
   font-size: 16px;
   border-radius: 12px;
-  position: absolute;
-  bottom: 6vh;
-  transform: translateX(-50%);
-  left: 50%;
+  height: 48px;
 `;
 
 export const LinkView = styled.div`

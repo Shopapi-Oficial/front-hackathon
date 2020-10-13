@@ -5,11 +5,7 @@ import { Link } from 'react-router-dom';
 export const Content = styled(Container).attrs({
   maxWidth: 'md',
   component: 'main',
-})`
-  height: auto;
-  max-height: 150%;
-  overflow: auto;
-`;
+})``;
 
 export const Header = styled.div`
   display: flex;
@@ -50,7 +46,8 @@ export const SaleImg = styled.img`
 `;
 
 export const Buttom = styled(Link)`
-  width: 90%;
+  margin-top: 20px;
+  width: 100%;
   max-width: 900px;
   background: ${({ theme }) => theme.colors.primary};
   color: white;
@@ -61,8 +58,4 @@ export const Buttom = styled(Link)`
   font-size: 16px;
   border-radius: 12px;
   height: 48px;
-  position: absolute;
-  bottom: 6vh;
-  transform: translateX(-50%);
-  left: 50%;
 `;
